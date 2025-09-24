@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="id">
 <head>
@@ -74,7 +75,7 @@
   .contact-row{display:flex; gap:12px}
   @media (max-width:760px){.contact-row{flex-direction:column}}
   input, textarea{width:100%; padding:10px; background:transparent; border:1px solid rgba(255,255,255,0.08); color:inherit; border-radius:8px; font-size:14px}
-  button{padding:10px 14px; border-radius:10px; background:linear-gradient(90deg,var(--accent),#4dd0e1); border:0; cursor:pointer; font-weight:700; font-size:14px}
+  button{padding:10px 15px; border-radius:10px; background:linear-gradient(90deg,var(--accent),#4dd0e1); border:0; cursor:pointer; font-weight:700; font-size:14px}
 
   /* Footer */
   footer{margin-top:22px; text-align:center; color:var(--muted); font-size:13px}
@@ -155,10 +156,11 @@
         <div id="tugas" class="card fadeup" style="margin-top:18px">
           <h3>Upload Tugas Kuliah</h3>
           <p class="muted">Anda dapat mengunggah tugas kuliah melalui form berikut:</p>
-          <form onsubmit="uploadTugas(event)" enctype="multipart/form-data">
-            <input type="file" id="fileTugas" required />
             <div style="margin-top:12px">
-              <button type="submit">Upload</button>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDGfDS8WATs4aTIFcD7beANyGcSTUy5nw3Wn4cH0z1qoRkqg/viewform" 
+                target="_blank">
+                <button type="button">Upload</button>
+                </a>
             </div>
           </form>
           <div id="hasilUpload" class="muted" style="margin-top:10px"></div>
@@ -211,22 +213,5 @@
       © <span id="year"></span> Misbakhul Munir
     </footer>
   </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function handleSubmit(e){
-      e.preventDefault();
-      alert('Pesan berhasil dikirim!');
-    }
-
-    function uploadTugas(e){
-      e.preventDefault();
-      const file = document.getElementById('fileTugas').files[0];
-      if(file){
-        document.getElementById('hasilUpload').textContent = `Tugas "${file.name}" berhasil diupload (simulasi).`;
-      }
-    }
-  </script>
 </body>
 </html>
