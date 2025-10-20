@@ -235,5 +235,17 @@
       © <span id="year"></span> Misbakhul Munir
     </footer>
   </div>
+  <script>
+    function aksesTerlindungi(url) {
+      const pass = prompt("Masukkan password untuk membuka halaman ini:");
+      if (pass === "232006") {
+        window.open(url, "_blank");
+      } else {
+        alert("Password salah! Akses ditolak.");
+      }
+    }
+  </script>
+
 </body>
 </html>
+
