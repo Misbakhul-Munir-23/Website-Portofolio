@@ -70,13 +70,14 @@
     .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
     .tag{font-size:12px; color:var(--muted)}
 
+    /* Efek hover untuk card proyek */
     .card.proj {
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
     }
     .card.proj:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
     }
 
   /* Contact */
@@ -90,7 +91,17 @@
   .fadeup{animation:fadeUp .6s cubic-bezier(.2,.9,.3,1) both}
   @keyframes fadeUp{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
   .muted{color:var(--muted)}
+
+  /* Mobile Responsiveness */
+  @media (max-width:600px){
+    body{padding:16px}
+    .hero .title{font-size:22px}
+    .hero .subtitle{font-size:14px}
+    nav a{font-size:13px; padding:6px 10px}
+    .photo{height:180px; font-size:28px}
+  }
   </style>
+
 </head>
 <body>
   <div class="wrap">
@@ -119,6 +130,7 @@
           <p class="subtitle">Saya membuat aplikasi web, game edukasi (Phaser), dan desain UI/UX. Berikut beberapa proyek saya — silakan lihat dan hubungi saya jika ingin kolaborasi.</p>
         </div>
 
+        <!-- Projek -->
         <div id="projects" class="card fadeup" style="margin-top:18px">
           <h3>Proyek</h3>
           <div class="proj-grid">
@@ -145,14 +157,34 @@
           </div>
         </div>
 
+        <!-- Sertifikat -->
+        <div id="certificates" class="card fadeup" style="margin-top:18px">
+          <h3>Sertifikat</h3>
+          <div class="proj-grid">
+            <div class="card">
+              <strong>Sertifikat Game Edukasi</strong>
+              <a href="sertifikat_game.pdf" class="download" style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">Lihat Sertifikat</a>
+            </div>
+            <div class="card">
+              <strong>Sertifikat IoT</strong>
+              <a href="sertifikat_iot.pdf" class="download" style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">Lihat Sertifikat</a>
+            </div>
+          </div>
+        </div>
+
         <div id="tugas" class="card fadeup" style="margin-top:18px">
           <h3>Upload Tugas Kuliah</h3>
           <p class="muted">Anda dapat mengunggah tugas kuliah melalui form berikut:</p>
             <div style="margin-top:12px">
-                <button type="button" onclick="checkPassword('upload')">Upload</button>
-                <button type="button" onclick="checkPassword('lihat')">Lihat Tugas</button>
-                <button type="button" onclick="checkPassword('materi')">Materi</button>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDGfDS8WATs4aTIFcD7beANyGcSTUy5nw3Wn4cH0z1qoRkqg/viewform" 
+                target="_blank">
+                <button type="button">Upload</button>
+                <button type="button" onclick="window.open('https://docs.google.com/spreadsheets/d/1KH9jRn24VQb31sZd4tAc6_5Cp0ah5n5kHRDikP3UNCw/edit?resourcekey=&gid=673559737#gid=673559737')">
+                    Lihat Tugas
+                </button>
+                </a>
             </div>
+          </form>
           <div id="hasilUpload" class="muted" style="margin-top:10px"></div>
         </div>
 
@@ -169,7 +201,7 @@
 
         <div id="about" class="card fadeup" style="margin-top:18px">
           <h3>Tentang Saya</h3>
-          <p class="muted">Saya mahasiswa Universitas Wahid Hasyim Semarang program studi Teknik Informatika dengan minat di Pemrograman web, UI/UX Design, Game, dan IoT.</p>
+          <p class="muted">Saya mahasiswa Universitas Wahid Hasyim semarang program studi Teknik Informatika dengan minat di Pemrograman web, UI/UX Design, Game, dan IoT.</p>
         </div>
 
         <div id="contact" class="card fadeup" style="margin-top:18px">
@@ -203,24 +235,5 @@
       © <span id="year"></span> Misbakhul Munir
     </footer>
   </div>
-
-  <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  function checkPassword(action){
-    const password = prompt('Masukkan password untuk melanjutkan:');
-    if(password === '232006'){
-      if(action === 'upload'){
-        window.open('https://docs.google.com/forms/d/e/1FAIpQLSfDGfDS8WATs4aTIFcD7beANyGcSTUy5nw3Wn4cH0z1qoRkqg/viewform','_blank');
-      } else if(action === 'lihat'){
-        window.open('https://docs.google.com/spreadsheets/d/1KH9jRn24VQb31sZd4tAc6_5Cp0ah5n5kHRDikP3UNCw/edit?resourcekey=&gid=673559737#gid=673559737','_blank');
-      } else if(action === 'materi'){
-        window.open('https://docs.google.com/spreadsheets/d/1KH9jRn24VQb31sZd4tAc6_5Cp0ah5n5kHRDikP3UNCw/edit?resourcekey=&gid=673559737#gid=673559737','_blank');
-      }
-    } else if(password){
-      alert('Password salah!');
-    }
-  }
-  </script>
 </body>
 </html>
