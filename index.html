@@ -151,19 +151,75 @@
           </div>
         </div>
 
+        <!-- bagian menu sertifikat -->
+
         <div id="certificates" class="card fadeup" style="margin-top:18px">
-          <h3>Sertifikat</h3>
-          <div class="proj-grid">
-            <div class="card">
-              <strong>Sertifikat Game Edukasi</strong>
-              <a href="sertifikat_game.pdf" class="download" style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">Lihat Sertifikat</a>
-            </div>
-            <div class="card">
-              <strong>Sertifikat IoT</strong>
-              <a href="sertifikat_iot.pdf" class="download" style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">Lihat Sertifikat</a>
-            </div>
+
+        <!-- Header Sertifikat -->
+        <div style="display:flex; justify-content:space-between; align-items:center">
+          <h3 style="margin:0">Sertifikat</h3>
+          <span onclick="toggleSertifikat()"
+                style="cursor:pointer; font-size:13px; color:var(--accent); font-weight:600">
+            Selengkapnya
+          </span>
+        </div>
+      
+        <!-- Sertifikat utama -->
+        <div class="proj-grid" style="margin-top:12px">
+          <div class="card">
+            <strong>Sertifikat Game Edukasi</strong>
+            <a href="sertifikat_game.pdf" class="download"
+               style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">
+              Lihat Sertifikat
+            </a>
+          </div>
+      
+          <div class="card">
+            <strong>Sertifikat IoT</strong>
+            <a href="sertifikat_iot.pdf" class="download"
+               style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">
+              Lihat Sertifikat
+            </a>
           </div>
         </div>
+      
+        <!-- Sertifikat tambahan (hidden) -->
+        <div id="more-certificates" class="proj-grid" style="display:none; margin-top:12px">
+          <div class="card">
+            <strong>Sertifikat UI/UX Design</strong>
+            <a href="sertifikat_uiux.pdf" class="download"
+               style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">
+              Lihat Sertifikat
+            </a>
+          </div>
+      
+          <div class="card">
+            <strong>Sertifikat Web Development</strong>
+            <a href="sertifikat_web.pdf" class="download"
+               style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">
+              Lihat Sertifikat
+            </a>
+          </div>
+      
+          <div class="card">
+            <strong>Sertifikat JavaScript</strong>
+            <a href="sertifikat_js.pdf" class="download"
+               style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">
+              Lihat Sertifikat
+            </a>
+          </div>
+      
+          <div class="card">
+            <strong>Sertifikat Game Development</strong>
+            <a href="sertifikat_game_dev.pdf" class="download"
+               style="background:rgba(255,255,255,0.02); color:var(--accent); margin-top:10px">
+              Lihat Sertifikat
+            </a>
+          </div>
+        </div>
+      
+      </div>
+
 
         <div id="tugas" class="card fadeup" style="margin-top:18px">
           <h3>Upload Tugas Kuliah</h3>
@@ -254,10 +310,16 @@
       }
     }
 
+    function toggleSertifikat(){
+      const more = document.getElementById('more-certificates');
+      more.style.display = more.style.display === 'none' ? 'grid' : 'none';
+    }
+    
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
 
